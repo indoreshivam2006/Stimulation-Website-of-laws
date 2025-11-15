@@ -3,6 +3,7 @@
 /* Remove conflicting background - use global dark theme */
 body {
     /* Background already set in global-modern.css */
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
 /* Remove old nav styles - using modern-nav from global */
@@ -33,4 +34,225 @@ footer:not(.modern-footer) {
 /* Override old heading colors to use modern theme */
 h2 {
     color: var(--text-light);
+}
+
+/* Enhanced Blockquote Styling */
+.content-card blockquote {
+    position: relative;
+    padding-left: 60px;
+}
+
+.content-card blockquote::before {
+    content: '\f10d';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-size: 2rem;
+    color: var(--primary-color);
+    opacity: 0.3;
+}
+
+/* Enhanced List Items with Icons */
+.modern-list li strong {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* Button Enhancements */
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+    transform: translateY(-1px);
+}
+
+/* Law Card Enhancements */
+.law-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.law-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.law-card:hover::before {
+    left: 100%;
+}
+
+/* Tip Item Animations */
+.tip-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.tip-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.tip-item:hover::after {
+    width: 80%;
+}
+
+/* Social Links Enhancement */
+.social-links a {
+    position: relative;
+    overflow: hidden;
+}
+
+.social-links a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.social-links a:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer Section Enhancement */
+.footer-section ul li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-section ul li a i {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.footer-section ul li a:hover i {
+    transform: translateX(3px);
+}
+
+/* Scroll Animation Classes */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    .laws-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-card blockquote {
+        padding-left: 20px;
+        font-size: 0.95rem;
+    }
+
+    .content-card blockquote::before {
+        display: none;
+    }
+
+    .law-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .law-card p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.law-icon {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.law-card:hover .law-icon {
+    animation: none;
+}
+
+/* Glassmorphism Effect */
+.content-card {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(30, 41, 59, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Gradient Text Effect for Headers */
+.page-header h1 {
+    background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hover Effect for Content Cards */
+.content-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(99, 102, 241, 0.25);
 }

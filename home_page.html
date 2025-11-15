@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Animated Physics</title>
+    <meta name="description"
+        content="Interactive physics simulations and animations. Learn Newton's Laws, Kepler's Laws, Thermodynamics, and more through engaging visualizations.">
+    <meta name="keywords"
+        content="physics, animations, simulations, Newton's Laws, Kepler's Laws, thermodynamics, interactive learning">
+    <meta name="author" content="Animated Physics">
+    <title>About Us - Interactive Physics Simulations | Animated Physics</title>
     <link rel="stylesheet" href="global-modern.css">
     <link rel="stylesheet" href="home_page.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap"
@@ -16,12 +21,12 @@
 <body>
     <nav class="modern-nav">
         <div class="container">
-            <a href="main.html" class="logo">
+            <a href="index.html" class="logo">
                 <i class="fas fa-atom"></i>
                 <span>Animated Physics</span>
             </a>
             <div class="nav-links">
-                <a href="main.html"><i class="fas fa-home"></i> <span>Home</span></a>
+                <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
                 <a href="Laws.html"><i class="fas fa-book"></i> <span>Laws</span></a>
                 <a href="resources.html"><i class="fas fa-graduation-cap"></i> <span>Resources</span></a>
                 <a href="contact.html"><i class="fas fa-envelope"></i> <span>Contact</span></a>
@@ -30,43 +35,154 @@
     </nav>
 
     <header class="page-header">
-        <h1>What We Offer</h1>
-        <p>Interactive physics education for everyone</p>
+        <h1>About Animated Physics</h1>
+        <p>Where Science Meets Visualization</p>
     </header>
 
     <div class="content-wrapper">
+        <!-- Mission Statement -->
+        <div class="content-card fade-in-up">
+            <h2><i class="fas fa-rocket"></i> Our Mission</h2>
+            <p>At <strong>Animated Physics</strong>, we believe that learning physics should be an exciting and visual
+                journey. Our mission is to transform complex physical concepts into interactive, engaging experiences
+                that make science accessible to everyone—from curious students to passionate educators and lifelong
+                learners.</p>
+            <blockquote>
+                <p>"Physics is not just about equations; it's about understanding the universe through observation and
+                    experimentation."</p>
+            </blockquote>
+        </div>
+
+        <!-- What We Offer -->
         <div class="content-card fade-in-up">
             <h2><i class="fas fa-gift"></i> What We Offer</h2>
             <ul class="modern-list">
-                <li><i class="fas fa-flask"></i> Interactive physics simulations and animations</li>
-                <li><i class="fas fa-book-open"></i> Comprehensive explanations of fundamental physics laws</li>
-                <li><i class="fas fa-eye"></i> Visual demonstrations of Newton's, Kepler's, and other laws</li>
-                <li><i class="fas fa-users"></i> Educational resources for students and enthusiasts</li>
+                <li><i class="fas fa-flask"></i> <strong>Interactive Simulations:</strong> Real-time physics simulations
+                    that respond to your inputs</li>
+                <li><i class="fas fa-book-open"></i> <strong>Comprehensive Explanations:</strong> Detailed breakdowns of
+                    fundamental physics laws with clear examples</li>
+                <li><i class="fas fa-eye"></i> <strong>Visual Demonstrations:</strong> Animated visualizations of
+                    Newton's Laws, Kepler's Laws, Hooke's Law, Snell's Law, and more</li>
+                <li><i class="fas fa-chart-line"></i> <strong>Dynamic Graphs:</strong> Watch physics principles come
+                    alive through real-time graphical representations</li>
+                <li><i class="fas fa-graduation-cap"></i> <strong>Educational Resources:</strong> Curated learning
+                    materials, video tutorials, and practice problems</li>
+                <li><i class="fas fa-users"></i> <strong>Community Driven:</strong> Built for students, educators, and
+                    physics enthusiasts worldwide</li>
             </ul>
         </div>
 
+        <!-- Key Features -->
+        <div class="content-card fade-in-up">
+            <h2><i class="fas fa-star"></i> Key Features</h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <i class="fas fa-play-circle"></i>
+                    <h3>Interactive Controls</h3>
+                    <p>Adjust parameters in real-time and observe how physical systems respond instantly</p>
+                </div>
+                <div class="tip-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Access simulations seamlessly on desktop, tablet, or mobile devices</p>
+                </div>
+                <div class="tip-item">
+                    <i class="fas fa-palette"></i>
+                    <h3>Modern Interface</h3>
+                    <p>Clean, intuitive design that enhances learning without distraction</p>
+                </div>
+                <div class="tip-item">
+                    <i class="fas fa-code"></i>
+                    <h3>Open Source</h3>
+                    <p>Explore the code, contribute, and customize for your own projects</p>
+                </div>
+                <div class="tip-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Learn at Your Pace</h3>
+                    <p>Pause, rewind, and replay simulations as many times as you need</p>
+                </div>
+                <div class="tip-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Conceptual Clarity</h3>
+                    <p>Visual aids that make abstract concepts concrete and understandable</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Physics Laws Covered -->
+        <div class="content-card fade-in-up">
+            <h2><i class="fas fa-atom"></i> Physics Laws & Concepts Covered</h2>
+            <div class="laws-grid">
+                <div class="law-card" onclick="window.location.href='newton.html'">
+                    <div class="law-icon"><i class="fas fa-apple-alt"></i></div>
+                    <h3>Newton's Laws</h3>
+                    <p>Explore the three fundamental laws of motion that govern our physical world</p>
+                </div>
+                <div class="law-card" onclick="window.location.href='Kepler.html'">
+                    <div class="law-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Kepler's Laws</h3>
+                    <p>Discover the laws of planetary motion and orbital mechanics</p>
+                </div>
+                <div class="law-card" onclick="window.location.href='Hookes.html'">
+                    <div class="law-icon"><i class="fas fa-arrows-alt-v"></i></div>
+                    <h3>Hooke's Law</h3>
+                    <p>Understand elasticity and the relationship between force and displacement</p>
+                </div>
+                <div class="law-card" onclick="window.location.href='Snells.html'">
+                    <div class="law-icon"><i class="fas fa-wave-square"></i></div>
+                    <h3>Snell's Law</h3>
+                    <p>Learn about light refraction and the behavior of waves</p>
+                </div>
+                <div class="law-card" onclick="window.location.href='Coulomb.html'">
+                    <div class="law-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Coulomb's Law</h3>
+                    <p>Explore electrostatic interactions and electric forces</p>
+                </div>
+                <div class="law-card" onclick="window.location.href='Thermodynamics.html'">
+                    <div class="law-icon"><i class="fas fa-thermometer-half"></i></div>
+                    <h3>Thermodynamics</h3>
+                    <p>Study energy, heat transfer, and thermodynamic processes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Learn With Us -->
         <div class="content-card fade-in-up">
             <h2><i class="fas fa-lightbulb"></i> Why Learn With Us?</h2>
-            <p>Our mission is to make physics education engaging and accessible through
-                interactive visualizations and animations.
-                Whether you're a student, teacher, or physics enthusiast,
-                our curated content helps you understand
-                complex physical concepts with ease.</p>
+            <p>Traditional physics education often relies heavily on static diagrams and complex mathematics. While
+                these are important, they can make physics seem abstract and disconnected from reality. Our approach is
+                different:</p>
+            <ul class="modern-list">
+                <li><i class="fas fa-check-circle"></i> <strong>Visual Learning:</strong> See physics in action through
+                    dynamic animations that make concepts stick</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Hands-On Exploration:</strong> Interact with simulations
+                    to develop intuition and deeper understanding</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Immediate Feedback:</strong> Experiment with parameters
+                    and instantly see the results</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Self-Paced Learning:</strong> Take your time to explore
+                    each concept thoroughly</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Free & Accessible:</strong> No subscriptions, no
+                    barriers—just pure learning</li>
+            </ul>
         </div>
 
-        <div class="content-card fade-in-up">
-            <h2><i class="fas fa-compass"></i> Explore More</h2>
-            <ul class="modern-list">
-                <li><i class="fas fa-book"></i> Check out our <a href="Laws.html"
-                        style="color: var(--primary-color); text-decoration: none;">Laws</a> section for
-                    in-depth physics concepts.</li>
-                <li><i class="fas fa-graduation-cap"></i> Browse <a href="resources.html"
-                        style="color: var(--primary-color); text-decoration: none;">Resources</a> for learning materials
-                    and simulations.</li>
-                <li><i class="fas fa-envelope"></i> Have questions? <a href="contact.html"
-                        style="color: var(--primary-color); text-decoration: none;">Contact us</a>
-                    anytime!</li>
-            </ul>
+        <!-- Call to Action -->
+        <div class="content-card fade-in-up"
+            style="text-align: center; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);">
+            <h2><i class="fas fa-compass"></i> Start Your Physics Journey</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">Dive into the fascinating world of physics through
+                interactive simulations and animations</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="Laws.html" class="btn-primary">
+                    <i class="fas fa-book"></i> Explore Physics Laws
+                </a>
+                <a href="resources.html" class="btn-secondary">
+                    <i class="fas fa-graduation-cap"></i> Learning Resources
+                </a>
+                <a href="contact.html" class="btn-outline">
+                    <i class="fas fa-envelope"></i> Get in Touch
+                </a>
+            </div>
         </div>
     </div>
 
@@ -74,22 +190,86 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3><i class="fas fa-atom"></i> Animated Physics</h3>
-                <p>Making physics education interactive and accessible for everyone.</p>
+                <p>Making physics education interactive and accessible for everyone through cutting-edge visualizations
+                    and simulations.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="main.html">Home</a></li>
-                    <li><a href="Laws.html">Physics Laws</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="home_page.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="Laws.html"><i class="fas fa-book"></i> Physics Laws</a></li>
+                    <li><a href="resources.html"><i class="fas fa-graduation-cap"></i> Resources</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Physics Topics</h3>
+                <ul>
+                    <li><a href="newton.html">Newton's Laws</a></li>
+                    <li><a href="Kepler.html">Kepler's Laws</a></li>
+                    <li><a href="Hookes.html">Hooke's Law</a></li>
+                    <li><a href="Snells.html">Snell's Law</a></li>
+                    <li><a href="Coulomb.html">Coulomb's Law</a></li>
+                    <li><a href="Thermodynamics.html">Thermodynamics</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="resources.html#videos">Video Tutorials</a></li>
+                    <li><a href="resources.html#books">Recommended Books</a></li>
+                    <li><a href="resources.html#online">Online Courses</a></li>
+                    <li><a href="resources.html#tools">Interactive Tools</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Animated Physics. All rights reserved.</p>
+            <p>&copy; 2025 Animated Physics. All rights reserved. | Made with <i class="fas fa-heart"
+                    style="color: #ec4899;"></i> for Physics Enthusiasts</p>
         </div>
     </footer>
+
+    <script>
+        // Smooth scroll animation for cards
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.content-card');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Add hover effect to law cards
+            const lawCards = document.querySelectorAll('.law-card');
+            lawCards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.cursor = 'pointer';
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
