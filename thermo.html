@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+  <title>Refrigeration System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0" />
+  <link rel="icon" href="logo1.png">
+</head>
+
+<script src="libraries/d3.v4.min.js"></script>
+<script src="libraries/d3-selection-multi.v1.min.js"></script>
+<script src="libraries/jquery-3.2.1.min.js"></script>
+
+<script src="libraries/numeric.min.js"></script>
+
+<script src="libraries/popper.min.js"></script>
+<script src="libraries/bootstrap.min.js"></script>
+<script src="libraries/sweetalert2.all.js"></script>
+
+<script src="libraries/plotly-latest.min.js"></script>
+
+<script
+  type="text/x-mathjax-config"> MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX","output/HTML-CSS"], tex2jax: { inlineMath: [["\(","\)"]] } }); </script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<link rel="stylesheet" href="libraries/bootstrap.min.css">
+<link rel="stylesheet" href="css/stylesheet.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+  integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" async>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="container-fluid text-center px-0">
+    <nav class="navbar navbar-light bg-light py-1">
+      <div class='container' style="background-color: black;">
+        <a class="navbar-brand" href="#" style="color: aliceblue;">Thermodynamics</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container text-center">
+
+    <!-- <div class='mt-3 heading'> <h4>Refrigeration Cycle<h4> </div> -->
+    <div class='row'>
+      <div class='col-md-6'> <svg id='schematic_svg' width='400px' height='400px'></svg> </div>
+      <div class='col-md-6'>
+        <div id='graph_panel'></div>
+      </div>
+    </div>
+
+    <!-- <div> <svg id='schematic_svg' width='800px' height='500px'></svg> </div> -->
+    <!-- <div id="graph_panel"></div> -->
+
+    <!-- Graph Controls -->
+    <div class="my-2">
+
+      <span class='mx-1'> y-axis:
+        <select id="y_axis_menu">
+          <option value='p' selected>Pressure</option>
+          <option value='v'>Volume</option>
+          <option value='T'>Temperature</option>
+        </select>
+      </span>
+
+      <span class='mx-1'> x-axis:
+        <select id="x_axis_menu">
+          <option value='p'>Pressure</option>
+          <option value='v' selected>Volume</option>
+          <option value='T'>Temperature</option>
+        </select>
+      </span>
+
+    </div>
+    <!-- Graph Controls -->
+
+    <div class="row" id="controls_panel"></div>
+  </div>
+
+</body>
+
+<script src='js/state.js'></script>
+<script src='js/adiabaticProcess.js'></script>
+<script src='js/isobaricProcess.js'></script>
+
+<script src='js/schematic.js'></script>
+<script src='js/setup.js'></script>
+<script src='js/update.js'></script>
+<script src='js/graph.js'></script>
+<script src='js/index.js'></script>

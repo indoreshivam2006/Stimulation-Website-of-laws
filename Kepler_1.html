@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kepler's First Law Simulation</title>
+    <link rel="stylesheet" href="global-modern.css">
+    <link rel="stylesheet" href="Kepler_1.css">
+    <link rel="icon" href="logo1.png">
+</head>
+
+<body>
+    <header>
+        <h1>Kepler's First Law</h1>
+        <p>All the planets revolve around the Sun in elliptical orbits, with the Sun at one of the foci.</p>
+    </header>
+
+    <div id="simulation-container">
+        <canvas id="keplerCanvas" width="800" height="600"></canvas>
+
+        <div id="tools">
+            <h3>Tools</h3>
+            <div id="stopwatch">
+                <strong>Stopwatch:</strong>
+                <span id="timeElapsed">0</span> years
+                <br>
+                <button id="startStopwatch">Start</button>
+                <button id="resetStopwatch">Reset</button>
+            </div>
+            <div id="measuring-tape">
+                <strong>Measuring Distance:</strong>
+                <p id="distanceOutput">Distance: 0 km</p>
+            </div>
+        </div>
+
+        <div id="distanceContainer">
+            <p id="distanceFromSun">0 km</p>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="slider-container">
+            <label for="semiMajor">Semi-Major Axis: <span id="semiMajorValue">200</span></label>
+            <input type="range" id="semiMajor" value="200" step="10" min="100" max="400">
+        </div>
+
+        <div class="slider-container">
+            <label for="eccentricity">Eccentricity: <span id="eccentricityValue">0.1</span></label>
+            <input type="range" id="eccentricity" value="0.1" step="0.05" min="0" max="1">
+        </div>
+
+        <div class="slider-container">
+            <label for="earthSpeed">Earth Speed: <span id="earthSpeedValue">1</span></label>
+            <input type="range" id="earthSpeed" value="1" step="0.1" min="0.5" max="2">
+        </div>
+
+        <div class="slider-container">
+            <label for="moonSpeed">Moon Speed: <span id="moonSpeedValue">1</span></label>
+            <input type="range" id="moonSpeed" value="1" step="0.1" min="0.5" max="2">
+        </div>
+    </div>
+
+
+
+    <script src="Kepler_1.js"></script>
+</body>
+
+</html>

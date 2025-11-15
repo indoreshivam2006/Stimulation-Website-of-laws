@@ -1,0 +1,36 @@
+/* Home Page Specific Styles - Complement global-modern.css */
+
+/* Remove conflicting background - use global dark theme */
+body {
+    /* Background already set in global-modern.css */
+}
+
+/* Remove old nav styles - using modern-nav from global */
+nav:not(.modern-nav) {
+    display: none;
+}
+
+/* Remove old section styles - using content-card from global */
+section:not(.page-header) {
+    background: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+main {
+    padding: 0;
+}
+
+/* Remove old footer - using modern-footer from global */
+footer:not(.modern-footer) {
+    display: none;
+}
+
+/* Override old heading colors to use modern theme */
+h2 {
+    color: var(--text-light);
+}

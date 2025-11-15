@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hooke's Animation</title>
+    <link rel="stylesheet" href="Hookes_anime.css">
+    <link rel="icon"
+            href="logo1.png">
+  </head>
+
+  <body>
+
+    <div class='main'>
+      <label>Gravity :</label>
+      <input onChange='inputChanged(event)' min=0 type='number' id='gravity'
+        placeholder="Gravity" value=0.01 />
+      <label>Mass (kg) :</label>
+      <input onChange='inputChanged(event)' min=0 type='number' id='mass'
+        placeholder="Mass of Bobby (kg)" value=1 />
+      <label>Spring Constant (K) :</label>
+      <input onChange='inputChanged(event)' min=0 type='number'
+        id='springConstant'
+        placeholder="Spring Constant (springiness)" value=0.01 />
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+    <script src="Hookes_anime.js"></script>
+
+  </body>
+
+</html>

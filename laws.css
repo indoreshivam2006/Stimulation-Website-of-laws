@@ -1,0 +1,80 @@
+/* Laws Page Specific Styles - Override/complement global-modern.css */
+
+/* Remove conflicting background */
+body {
+    /* Background already set in global-modern.css */
+}
+
+/* Search Results Dropdown */
+#result {
+    position: relative;
+    background: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    width: 100%;
+    max-width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 15px;
+    z-index: 100;
+}
+
+.suggestion {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    color: var(--text-light);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.suggestion:last-child {
+    border-bottom: none;
+}
+
+.suggestion:hover {
+    background: rgba(99, 102, 241, 0.2);
+    transform: translateX(5px);
+    padding-left: 25px;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.no-results {
+    padding: 20px;
+    color: var(--text-gray);
+    text-align: center;
+    font-style: italic;
+}
+
+/* Override any old styles */
+.subpage-container,
+header.old-header,
+.subpage-section {
+    display: none;
+}
+
+input[type="text"]:not(.search-box) {
+    display: none;
+}
+
+ul:not(.modern-list):not(.footer-section ul) {
+    list-style: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    #result {
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+    .suggestion {
+        padding: 12px 15px;
+    }
+}

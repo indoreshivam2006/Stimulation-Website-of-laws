@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg,  black, white, gray);
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  gap: 20px; /* Space between control box & canvas */
+  align-items: center;
+  flex-wrap: wrap; /* Makes it responsive */
+  justify-content: center;
+}
+
+#canvas {
+  display: block;
+  background: black;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+/* Modern, responsive control panel */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #2e2a2a;
+  padding: 20px;
+  color: yellow;
+  width: 320px;
+  min-width: 280px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+/* Title Styling */
+.main h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffcc00;
+  text-transform: uppercase;
+}
+
+/* Label Styling */
+.main label {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  color: #ffdb4d;
+}
+
+/* Input Styling */
+.main input {
+  width: 90%;
+  margin: 8px 0;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+  text-align: center;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.main input:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 255, 0, 0.5);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .main {
+    width: 100%;
+    max-width: 350px;
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coulomb's Law Animation</title>
+    <link rel="stylesheet" href="Coulomb_anime.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="logo1.png">
+</head>
+
+<body>
+    <header>
+        <h1>Coulomb's Law Interactive Simulation</h1>
+        <p>Explore the electrostatic force between charged particles</p>
+    </header>
+
+    <div class="container">
+        <div class="controls">
+            <h3>Controls</h3>
+
+            <div class="control-group">
+                <label for="charge1">Charge 1 (μC):</label>
+                <input type="range" id="charge1" min="-10" max="10" value="5" step="0.5">
+                <span id="charge1Value">5</span> μC
+            </div>
+
+            <div class="control-group">
+                <label for="charge2">Charge 2 (μC):</label>
+                <input type="range" id="charge2" min="-10" max="10" value="-5" step="0.5">
+                <span id="charge2Value">-5</span> μC
+            </div>
+
+            <div class="control-group">
+                <label for="distance">Distance (m):</label>
+                <input type="range" id="distance" min="0.5" max="10" value="2" step="0.1">
+                <span id="distanceValue">2</span> m
+            </div>
+
+            <div class="info-panel">
+                <h4>Coulomb's Law:</h4>
+                <p><strong>F = k × |q₁ × q₂| / r²</strong></p>
+                <p>k = 8.99 × 10⁹ N·m²/C²</p>
+                <hr>
+                <p><strong>Force:</strong> <span id="forceValue">0</span> N</p>
+                <p><strong>Type:</strong> <span id="forceType">Attractive</span></p>
+            </div>
+        </div>
+
+        <div class="visualization">
+            <canvas id="coulombCanvas" width="600" height="400"></canvas>
+        </div>
+
+        <div class="graph-container">
+            <canvas id="forceGraph"></canvas>
+        </div>
+    </div>
+
+    <div class="explanation">
+        <h3>Understanding the Simulation</h3>
+        <ul>
+            <li><strong>Red particles</strong> represent positive charges</li>
+            <li><strong>Blue particles</strong> represent negative charges</li>
+            <li><strong>Arrows</strong> show the direction and magnitude of the force</li>
+            <li><strong>Opposite charges attract</strong> (force pulls them together)</li>
+            <li><strong>Like charges repel</strong> (force pushes them apart)</li>
+            <li>Force increases as charges get closer (inverse square law)</li>
+        </ul>
+    </div>
+
+    <script src="Coulomb_anime.js"></script>
+</body>
+
+</html>
