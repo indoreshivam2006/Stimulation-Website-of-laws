@@ -1,0 +1,150 @@
+/* General Styles */
+body {
+    text-align: center;
+    background: linear-gradient(135deg, black, white);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    perspective: 1000px; /* 3D Effect */
+}
+
+/* 3D Box */
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+    transform: rotateX(10deg) rotateY(5deg);
+    transition: transform 0.5s ease-in-out;
+    padding: 20px;
+}
+
+/* Floating Effect */
+.container:hover {
+    transform: rotateX(0deg) rotateY(0deg) translateY(-10px);
+}
+
+/* Headers */
+h1 {
+    font-size: 24px;
+    color: #007BFF;
+    text-shadow: 2px 2px 10px rgba(0, 0, 255, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+h3 {
+    color: #555;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Controls */
+.controls {
+    margin: 20px 0;
+}
+
+input[type="range"] {
+    width: 60%;
+    margin: 10px 0;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Button */
+.btn {
+    background: #34cbeb;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect */
+.btn:hover {
+    background: #007BFF;
+    transform: scale(1.1);
+}
+
+/* Click Effect */
+.btn:active {
+    transform: scale(0.9);
+}
+
+/* Table */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+th {
+    background: #007BFF;
+    color: white;
+}
+
+/* Graph Container */
+.graph-container {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: 20px auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* 3D Floating Balloon */
+.balloon {
+    width: 50px;
+    height: 70px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    animation: floatBalloon 6s infinite ease-in-out;
+}
+
+/* Floating Balloon Animation */
+@keyframes floatBalloon {
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-300px); opacity: 0.7; }
+    100% { transform: translateY(-600px); opacity: 0; }
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    input[type="range"] {
+        width: 100%;
+    }
+}
+.balloon {
+    width: 50px;
+    height: 70px;
+    background: radial-gradient(circle, red, darkred);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -100px;
+    animation: floatBalloon 5s ease-in-out infinite;
+}
+
+@keyframes floatBalloon {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-600px); opacity: 0; }
+}

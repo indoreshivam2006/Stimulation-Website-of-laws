@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newton's First Law - Inertia</title>
+    <link rel="icon" href="../logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #fff;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        header {
+            padding: 25px 20px;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        header h1 i {
+            color: #6366f1;
+            font-size: 32px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 400;
+            margin-top: 5px;
+            line-height: 1.5;
+        }
+
+        .controls {
+            position: absolute;
+            top: 140px;
+            left: 20px;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            z-index: 999;
+            min-width: 280px;
+        }
+
+        .controls h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #6366f1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .control-item {
+            margin-bottom: 15px;
+        }
+
+        .control-item label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .control-item button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .control-item button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .control-item button:active {
+            transform: translateY(0);
+        }
+
+        .info-panel {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            max-width: 350px;
+            z-index: 999;
+        }
+
+        .info-panel h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #6366f1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-panel p {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .legend {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><i class="fas fa-apple-alt"></i> Newton's First Law - The Principle of Inertia</h1>
+        <p>An object at rest stays at rest, and an object in motion stays in motion with constant velocity unless acted
+            upon by an external force</p>
+    </header>
+
+    <div class="controls">
+        <h3><i class="fas fa-sliders-h"></i> Controls</h3>
+        <div class="control-item">
+            <button id="resetBtn">
+                <i class="fas fa-redo"></i> Reset Simulation
+            </button>
+        </div>
+        <div class="control-item">
+            <button id="addBallBtn">
+                <i class="fas fa-plus-circle"></i> Add Ball
+            </button>
+        </div>
+        <div class="control-item">
+            <button id="applyForceBtn">
+                <i class="fas fa-hand-pointer"></i> Apply Random Force
+            </button>
+        </div>
+    </div>
+
+    <div class="info-panel">
+        <h4><i class="fas fa-info-circle"></i> Instructions</h4>
+        <p><strong>Click on any ball</strong> to apply a force and see inertia in action!</p>
+        <p>Objects resist changes to their motion - this resistance is called <strong>inertia</strong>.</p>
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #3b82f6;"></div>
+                <span>At Rest</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ef4444;"></div>
+                <span>In Motion</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
+    <script src="law1.js"></script>
+</body>
+
+</html>

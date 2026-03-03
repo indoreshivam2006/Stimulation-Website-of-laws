@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://animated-physics.vercel.app/sitemap.xml

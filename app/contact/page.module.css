@@ -1,0 +1,161 @@
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.faqCard {
+  background: rgba(15,15,40,0.6);
+  border: var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.5rem;
+  backdrop-filter: blur(16px);
+  transition: all var(--transition-normal);
+}
+
+.faqCard:hover {
+  border-color: rgba(6,182,212,0.25);
+  transform: translateY(-4px);
+}
+
+.faqIcon { font-size: 1.8rem; margin-bottom: 0.75rem; display: block; }
+.faqCard h4 { font-family: var(--font-heading); font-size: 0.95rem; color: white; margin-bottom: 0.5rem; }
+.faqCard p { font-size: 0.8rem; line-height: 1.65; margin: 0; }
+
+/* Contact grid */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Form card */
+.formCard {
+  background: rgba(15,15,40,0.6);
+  border: var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  backdrop-filter: blur(20px);
+}
+
+.formCard h2 { font-size: 1.4rem; margin-bottom: 2rem; }
+
+.form { display: flex; flex-direction: column; gap: 1.25rem; }
+.formGroup {}
+
+.successMsg {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.3);
+  border-radius: var(--radius-md);
+  color: #34d399;
+  font-family: var(--font-heading);
+  font-weight: 500;
+}
+
+.successMsg span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(16,185,129,0.2);
+  font-size: 1rem;
+}
+
+/* Info card */
+.infoCard {
+  background: rgba(15,15,40,0.6);
+  border: var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  backdrop-filter: blur(20px);
+}
+
+.infoCard h2 { font-size: 1.4rem; margin-bottom: 2rem; }
+.infoCard h3 { font-size: 1rem; font-family: var(--font-heading); color: white; margin-bottom: 1rem; }
+
+.infoItems { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.infoIcon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(124,58,237,0.15);
+  border: 1px solid rgba(124,58,237,0.25);
+  border-radius: var(--radius-sm);
+}
+
+.infoItem h4 { font-size: 0.85rem; font-family: var(--font-heading); color: white; margin-bottom: 0.25rem; }
+.infoItem p { font-size: 0.82rem; color: var(--text-secondary); margin: 0; word-break: break-all; }
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  margin: 1.5rem 0;
+}
+
+.socials { display: flex; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap; }
+
+.socialBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255,255,255,0.04);
+  border: var(--border-glass);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.socialBtn:hover {
+  background: rgba(124,58,237,0.15);
+  border-color: rgba(124,58,237,0.3);
+  color: var(--accent-violet-light);
+  transform: translateY(-2px);
+}
+
+.formulaDecor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.formulaDecor span {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  background: rgba(255,255,255,0.03);
+  border: var(--border-glass);
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 1024px) { .faqGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) {
+  .contactGrid { grid-template-columns: 1fr; }
+  .faqGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) { .faqGrid { grid-template-columns: 1fr; } }

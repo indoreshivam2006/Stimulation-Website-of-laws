@@ -1,0 +1,231 @@
+/* Shared law detail page styles */
+
+.contentCard {
+  background: rgba(15,15,40,0.6);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  backdrop-filter: blur(20px);
+  margin-bottom: 1.5rem;
+}
+
+.lawBlock { padding: 0.5rem 0; }
+
+.lawHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.lawNumber {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 900;
+  background: var(--gradient-violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  opacity: 0.6;
+  min-width: 60px;
+}
+
+.lawHeader h3 {
+  font-size: 1.35rem;
+  font-family: var(--font-heading);
+  color: white;
+  margin: 0;
+}
+
+.blockquote {
+  padding: 1.25rem 1.5rem;
+  background: rgba(124,58,237,0.08);
+  border-left: 3px solid var(--accent-violet);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.formulaBox {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(6,182,212,0.07);
+  border: 1px solid rgba(6,182,212,0.2);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.25rem;
+}
+
+.formula {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: var(--gradient-cyan);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+
+.formulaLabel {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  margin: 2.5rem 0;
+}
+
+.varGrid {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.varItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.03);
+  border: var(--border-glass);
+  border-radius: var(--radius-full);
+}
+
+.varItem span {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent-gold-light);
+}
+
+.varItem p { font-size: 0.8rem; color: var(--text-secondary); margin: 0; }
+
+/* Quote card */
+.quoteCard {
+  background: rgba(124,58,237,0.06);
+  border: 1px solid rgba(124,58,237,0.15);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.quoteIcon {
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  color: var(--accent-violet);
+  opacity: 0.2;
+  line-height: 0.5;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.quoteText {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-primary);
+  max-width: 600px;
+  margin: 0 auto 1rem;
+  line-height: 1.7;
+}
+
+.quoteAuthor {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--accent-violet-light);
+  letter-spacing: 0.05em;
+}
+
+/* Related */
+.relatedRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.relatedLink {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 0.6rem 1.25rem;
+  border: var(--border-glass);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  background: rgba(255,255,255,0.03);
+}
+
+.relatedLink:hover {
+  color: white;
+  background: rgba(124,58,237,0.15);
+  border-color: rgba(124,58,237,0.3);
+}
+
+/* Additional info grid for some pages */
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.infoItem {
+  padding: 1rem 1.25rem;
+  background: rgba(255,255,255,0.02);
+  border: var(--border-glass);
+  border-radius: var(--radius-md);
+}
+
+.infoItem h4 {
+  font-size: 0.85rem;
+  font-family: var(--font-heading);
+  color: white;
+  margin-bottom: 0.4rem;
+}
+
+.infoItem p { font-size: 0.8rem; line-height: 1.6; margin: 0; }
+
+.bulletList {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+.bulletList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.bulletList li::before {
+  content: '→';
+  color: var(--accent-cyan);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+@media (max-width: 600px) {
+  .contentCard { padding: 2rem 1.5rem; }
+  .formulaBox { flex-direction: column; text-align: center; gap: 0.5rem; }
+  .formula { font-size: 1.3rem; }
+}

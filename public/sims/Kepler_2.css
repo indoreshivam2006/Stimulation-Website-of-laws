@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    overflow: auto;
+}
+
+/* Non-Copiable Kepler's 2nd Law Statement in Heading */
+#keplerStatement {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    -webkit-user-select: none;
+    /* Prevent text selection for Safari */
+    user-select: none;
+    /* Prevent text selection */
+    pointer-events: none;
+    /* Prevent interaction with the text */
+    display: inline-block;
+    /* Ensure proper alignment */
+    max-width: 80%;
+    /* Ensure it doesn't overflow */
+}
+
+/* Main Header */
+h1 {
+    font-size: 24px;
+    color: #000;
+    /* Change text color to black */
+    margin-bottom: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Container for orbit and controls */
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#orbitCanvas {
+    border: 2px solid #000000;
+    background-color: #eaeaea;
+    /* Light background for the canvas */
+    margin-bottom: 20px;
+}
+
+#controls {
+    margin-top: 20px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+#controls label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#controls input {
+    margin: 10px 0;
+}
+
+#controls input:focus {
+    outline: 2px solid #0072ff;
+}
+
+#infoBox {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+#areaGraph {
+    margin-top: 20px;
+}

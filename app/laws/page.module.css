@@ -1,0 +1,63 @@
+.lawsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.whySection { margin-top: 2rem; }
+
+.whyHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.whyHeader p {
+  max-width: 550px;
+  margin: 1rem auto 0;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.whyCard {
+  background: var(--bg-card);
+  border: var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(16px);
+  transition: all var(--transition-normal);
+}
+
+.whyCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(124,58,237,0.25);
+  box-shadow: var(--shadow-violet);
+}
+
+.whyIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.whyCard h4 {
+  font-size: 1rem;
+  font-family: var(--font-heading);
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.whyCard p { font-size: 0.875rem; line-height: 1.65; margin: 0; }
+
+@media (max-width: 1024px) {
+  .whyGrid { grid-template-columns: repeat(2, 1fr); }
+  .lawsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .lawsGrid { grid-template-columns: 1fr; }
+  .whyGrid { grid-template-columns: 1fr; }
+}

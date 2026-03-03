@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coulomb's Law in Action</title>
+        <link rel="stylesheet" href="Coulomb_anime.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="icon"
+            href="logo1.png">
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>Coulomb's Law in Action 🎈</h1>
+            <h3>Understanding Coulomb's Law ⚡</h3>
+
+            <p>
+                This simulation demonstrates how electric charges interact using
+                <b>Coulomb's Law</b> and <b>gravity</b>.
+            </p>
+
+            <div class="controls">
+                <label>Angle (°):</label>
+                <input type="range" id="angle" min="10" max="90" step="5"
+                    value="30" oninput="updateAngleValue(this.value)"
+                    title="Adjust the angle">
+                <span id="angleValue">30°</span>
+                <br>
+                <label>Length (cm): </label>
+                <input type="range" id="length" min="10" max="40" step="10"
+                    value="20" oninput="updateLengthValue(this.value)"
+                    title="Adjust the length">
+                <span id="lengthValue">20 cm</span>
+                <!-- Ensure "cm" is displayed -->
+
+            </div>
+
+            <button class="btn" onclick="calculate()">Simulate</button>
+
+            <table>
+                <tr>
+                    <th>Gravity (Fg)</th>
+                    <th>Electric Force (Fe)</th>
+                    <th>Distance (x)</th>
+                    <th>2x Distance</th>
+                    <th>Charge (q)</th>
+                    <th>Electrons</th>
+                </tr>
+                <tr>
+                    <td id="gravity">-</td>
+                    <td id="e">-</td>
+                    <td id="D">-</td>
+                    <td id="2D">-</td>
+                    <td id="charge">-</td>
+                    <td id="number">-</td>
+                </tr>
+            </table>
+
+            <div class="graph-container">
+                <canvas id="forceChart"></canvas>
+            </div>
+        </div>
+
+        <script src="Coulomb_anime.js"></script>
+    </body>
+</html>

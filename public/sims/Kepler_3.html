@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kepler's Third Law Simulation</title>
+    <link rel="icon" href="logo1.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* General Styles */
+        body {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0b132b;
+            color: #fff;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Layout and Containers */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .orbit-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Star & Planet Styling */
+        .star {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: radial-gradient(circle, gold 30%, orange 80%);
+            border-radius: 50%;
+            box-shadow: 0px 0px 20px 5px rgba(255, 215, 0, 0.8);
+            left: 120px;
+            /* Adjusted to place at one focus */
+            top: 132px;
+        }
+
+        .planet {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: radial-gradient(circle, #4db8ff 30%, #0056b3 80%);
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px 3px rgba(77, 184, 255, 0.7);
+        }
+
+        /* Graph Container */
+        .graph-container {
+            width: 90%;
+            max-width: 400px;
+            height: 300px;
+            background: #1c2541;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Graph Canvas */
+        canvas {
+            width: 100%;
+            height: 100%;
+            background: #0b132b;
+            border: 2px solid #5bc0eb;
+        }
+
+        /* Inputs & Buttons */
+        input,
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input {
+            background: #1c2541;
+            color: #fff;
+            border: 1px solid #5bc0eb;
+            text-align: center;
+        }
+
+        button {
+            background: #5bc0eb;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #00a8e8;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Kepler's Third Law Simulation</h2>
+    <label>Speed: <input type="range" id="speedSlider" min="0.1" max="2" step="0.1" value="0.3"></label>
+    <p>Orbital Period: <span id="orbitalPeriod">1</span> years</p>
+
+    <div class="container">
+        <div class="orbit-container">
+            <div class="star"></div>
+            <div class="planet" id="planet"></div>
+        </div>
+        <div class="graph-container">
+            <canvas id="keplerGraph"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const planet = document.getElementById('planet');
+        const speedSlider = document.getElementById('speedSlider');
+        let time = 0;
+        let chart;
+        let animationSpeed = parseFloat(speedSlider.value);
+
+        speedSlider.addEventListener('input', () => {
+            animationSpeed = parseFloat(speedSlider.value);
+        });
+
+        function updateSimulation() {
+            let a = 2;  // Semi-major axis in AU
+            let b = a * 0.8; // Semi-minor axis for elliptical orbit
+            let c = Math.sqrt(a ** 2 - b ** 2) * 100; // Focal distance
+            document.querySelector('.star').style.left = `${140 - c}px`; // Adjust star to focus
+
+            let orbitalPeriod = Math.sqrt(a ** 3); // Kepler's 3rd Law: T^2 = a^3
+            document.getElementById('orbitalPeriod').innerText = orbitalPeriod.toFixed(2);
+
+            drawGraph();
+            animateOrbit(a, b, orbitalPeriod);
+        }
+
+        function drawGraph() {
+            let ctx = document.getElementById('keplerGraph').getContext('2d');
+            let dataPoints = [];
+            for (let i = 0.5; i <= 5; i += 0.5) {
+                let T = Math.sqrt(i ** 3);
+                dataPoints.push({ x: i, y: T });
+            }
+
+            if (chart) chart.destroy();
+            chart = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'T vs A (Kepler’s 3rd Law)',
+                        data: dataPoints,
+                        borderColor: 'red',
+                        backgroundColor: 'rgba(255,0,0,0.5)',
+                        showLine: true,
+                        pointRadius: 5,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                }
+            });
+        }
+
+        function animateOrbit(a, b, orbitalPeriod) {
+            function step() {
+                time += 0.005 * animationSpeed;
+
+                // True anomaly angle (theta) with varying speed
+                let M = (time / orbitalPeriod) * 2 * Math.PI; // Mean anomaly
+                let E = M; // Eccentric anomaly (approximation)
+
+                // Solve Kepler's Equation using Newton-Raphson iteration
+                let e = 0.5; // Assume some orbital eccentricity
+                for (let i = 0; i < 5; i++) {
+                    E = E - (E - e * Math.sin(E) - M) / (1 - e * Math.cos(E));
+                }
+
+                let theta = 2 * Math.atan(Math.sqrt((1 + e) / (1 - e)) * Math.tan(E / 2));
+
+                // Convert polar to Cartesian coordinates
+                let r = (a * (1 - e ** 2)) / (1 + e * Math.cos(theta));
+                let x = (r * Math.cos(theta) * 100) + 140;
+                let y = (r * Math.sin(theta) * 100) + 140;
+
+                planet.style.left = `${x}px`;
+                planet.style.top = `${y}px`;
+
+                requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        updateSimulation();
+    </script>
+</body>
+
+</html>

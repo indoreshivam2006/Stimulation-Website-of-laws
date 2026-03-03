@@ -1,0 +1,125 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--card-border, rgba(255,255,255,0.08));
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  cursor: pointer;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--card-bg, rgba(124,58,237,0.1));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--card-border, rgba(124,58,237,0.4));
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 40px var(--card-glow, rgba(124,58,237,0.2));
+}
+
+.card:hover::before { opacity: 1; }
+
+.formula {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--card-text, #a855f7);
+  opacity: 0.06;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.05em;
+  transition: opacity var(--transition-normal);
+}
+
+.card:hover .formula { opacity: 0.12; }
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--card-bg, rgba(124,58,237,0.15));
+  border: 1px solid var(--card-border, rgba(124,58,237,0.3));
+  color: var(--card-text, #a855f7);
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.iconWrap {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  background: var(--card-bg, rgba(124,58,237,0.15));
+  border: 1px solid var(--card-border, rgba(124,58,237,0.25));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: all var(--transition-normal);
+  position: relative;
+  z-index: 1;
+}
+
+.card:hover .iconWrap {
+  box-shadow: 0 0 20px var(--card-glow, rgba(124,58,237,0.3));
+  transform: scale(1.05);
+}
+
+.icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--card-text, #a855f7);
+  transition: all var(--transition-fast);
+  position: relative;
+  z-index: 1;
+}
+
+.card:hover .cta { gap: 0.7rem; }
